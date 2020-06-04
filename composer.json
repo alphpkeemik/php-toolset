@@ -1,0 +1,13 @@
+{
+    "name": "ambientia/symfony-toolset",
+    "type": "library",
+    "description": "Various tools used in Symfony projects",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mati Andreas",
+            "email": "mati.andreas@ambientia.ee"
+        }
+    ],
+    "require": {}
+}

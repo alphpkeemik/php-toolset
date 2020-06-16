@@ -1,5 +1,6 @@
 # ModelTestTrait
 Trait for automatic (Doctrine model) object creation.
+
 Usage:
 ```
 class MyModelTest extends TestCase

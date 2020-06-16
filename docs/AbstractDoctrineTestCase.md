@@ -1,10 +1,11 @@
 # AbstractDoctrineTestCase
 Class for testing doctrine model and definitions.
+
 Usage:
 ```
 class ModelTest extends AbstractDoctrineTestCase
 {
-    public function testName()
+    public function testName(): void
     {
         $em = $this->createManager(Model::class);
         $test = new Model();

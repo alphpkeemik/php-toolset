@@ -1,4 +1,5 @@
 <?php
+
 namespace Ambientia\Toolset\Tests\Test\Fixtures;
 
 use DateTime;
@@ -91,7 +92,4 @@ class ModelTestTraitTestModel
     {
         $this->custom2 = $custom2;
     }
-
-
-
 }

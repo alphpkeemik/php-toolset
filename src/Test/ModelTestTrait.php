@@ -30,7 +30,7 @@ trait ModelTestTrait
 
                 if (!$type) {
                     $debug[] = "Parameter type missing for '$methodName'";
-                    continue(2);
+                    continue 2;
                 }
                 $typeName = $type->getName();
 
@@ -57,7 +57,6 @@ trait ModelTestTrait
                         }
                         $debug[] = "Parameter type '$typeName' for '$methodName' not supported";
                         continue 3;
-
                 }
             }
             $item->{$methodName}(...$args);

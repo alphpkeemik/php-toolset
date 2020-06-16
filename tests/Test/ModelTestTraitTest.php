@@ -21,7 +21,7 @@ class ModelTestTraitTest extends TestCase
         $custom2 = [uniqid()];
         $model = $this->createEntity(ModelTestTraitTestModel::class, [
             'setCustom1' => $custom1,
-            'setCustom2' => [$custom2]
+            'setCustom2' => [$custom2],
         ]);
 
         $this->assertNotEmpty($model->str);
@@ -47,5 +47,4 @@ class ModelTestTraitTest extends TestCase
         $this->assertSame($custom1, $model->custom1);
         $this->assertSame($custom2, $model->custom2);
     }
-
 }

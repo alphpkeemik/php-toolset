@@ -26,7 +26,7 @@ trait DoctrineTestTrait
             or
             property_exists($this, 'kernel')
         )) {
-            throw new RuntimeException('Extend ' . KernelTestCase::class);
+            throw new RuntimeException('Extend '.KernelTestCase::class);
         }
         if (!static::$kernel instanceof KernelInterface) {
             throw new RuntimeException('Boot kernel first');
@@ -58,7 +58,7 @@ trait DoctrineTestTrait
     private function createAndPersistEntity(string $class, array $custom = [], ObjectManager $em = null)
     {
         if (!method_exists($this, 'createEntity')) {
-            throw new RuntimeException('Include also ' . ModelTestTrait::class);
+            throw new RuntimeException('Include also '.ModelTestTrait::class);
         }
         $item = $this->createEntity($class, $custom);
 
@@ -66,16 +66,14 @@ trait DoctrineTestTrait
     }
 
     /**
-     * debugging function
-     *
-     * @param EntityManager|null $em
+     * debugging function.
      */
     private function enableLogger(EntityManager $em = null): void
     {
         if (!$em) {
             $em = $this->getManager();
             if (!$em instanceof KernelTestCase) {
-                throw new RuntimeException('Extend ' . KernelTestCase::class);
+                throw new RuntimeException('Extend '.KernelTestCase::class);
             }
         }
         $em->getConnection()->getConfiguration()->setSQLLogger(new EchoSQLLogger());

@@ -1,4 +1,4 @@
-# Data cleaner
+# Symfony toolset
 
 Various tools used in Symfony projects
 

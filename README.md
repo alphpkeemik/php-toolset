@@ -5,6 +5,7 @@ Various tools used in Symfony projects
 ## Tools
 * [Class for testing doctrine model and definitions](./docs/AbstractDoctrineTestCase.md)
 * [Creating and filling objects with setters](./docs/ModelTestTrait.md)
+* [Storing and reloading doctrine objects](./docs/DoctrineTestTrait.md)
 ## Developing
 ### Running code fixer
 

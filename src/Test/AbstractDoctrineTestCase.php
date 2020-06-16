@@ -11,6 +11,8 @@ use Symfony\Component\Filesystem\Filesystem;
 /**
  * Class for testing doctrine model and definitions.
  *
+ * @see DoctrineTestTrait for creating models
+ *
  * @author mati.andreas@ambientia.ee
  */
 abstract class AbstractDoctrineTestCase extends WebTestCase

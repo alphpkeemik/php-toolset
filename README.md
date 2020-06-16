@@ -3,23 +3,7 @@
 Various tools used in Symfony projects
 
 ## Tools
-### AbstractDoctrineTestCase
-Class for testing doctrine model and definitions.
-Usage:
-```
-class ModelTest extends AbstractDoctrineTestCase
-{
-    public function testName()
-    {
-        $em = $this->createManager(Model::class);
-        $test = new Model();
-        $test->set...(uniqid());
-        $em->persist($test);
-        $em->flush();
-        $this->assertTrue(true);
-    }
-}
-```
+* [Class for testing doctrine model and definitions](./docs/AbstractDoctrineTestCase.md)
 ## Developing
 ### Running code fixer
 

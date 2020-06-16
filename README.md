@@ -8,6 +8,7 @@ Various tools used in Symfony projects
 * [Creating and filling objects with setters](./docs/ModelTestTrait.md)
 * [Storing and reloading doctrine objects](./docs/DoctrineTestTrait.md)
 * [Creating units with multiple constructor arguments](./docs/CreateServiceTrait.md)
+* [Mocking Doctrine manager registry](./docs/DoctrineMockTrait.md)
 ## Developing
 ### Running code fixer
 

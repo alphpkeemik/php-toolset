@@ -3,6 +3,7 @@
 namespace Ambientia\Toolset\Test;
 
 use DateTime;
+use RuntimeException;
 use ReflectionClass;
 use ReflectionMethod;
 
@@ -13,8 +14,17 @@ trait ModelTestTrait
 {
     private function createEntity(string $class, array $custom = [])
     {
-        $item = new $class();
+
         $rc = new ReflectionClass($class);
+        if ($rc->getConstructor()) {
+            if (!method_exists($this, 'createService')) {
+                throw new RuntimeException('Include also ' . CreateServiceTrait::class);
+            }
+            $item = $this->createService($class);
+        } else {
+            $item = new $class();
+        }
+
         $debug = [];
         foreach ($rc->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
             $methodName = $method->getName();

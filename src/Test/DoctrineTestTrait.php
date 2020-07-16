@@ -3,7 +3,7 @@
 namespace Ambientia\Toolset\Test;
 
 use Doctrine\DBAL\Logging\EchoSQLLogger;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ObjectManager;
 use RuntimeException;
@@ -35,18 +35,10 @@ trait DoctrineTestTrait
         return self::$kernel->getContainer()->get('doctrine');
     }
 
-    /**
-     * @internal
-     */
-    private function getManager(): ObjectManager
-    {
-        return $this->getDoctrine()->getManager();
-    }
-
     private function persistEntity($item, ObjectManager $em = null)
     {
         if (!$em) {
-            $this->getManager();
+            $em = $this->getDoctrine()->getManager();
         }
         $em->persist($item);
         $em->flush();
@@ -68,12 +60,12 @@ trait DoctrineTestTrait
     /**
      * debugging function.
      */
-    private function enableLogger(EntityManager $em = null): void
+    private function enableLogger(EntityManagerInterface $em = null): void
     {
         if (!$em) {
-            $em = $this->getManager();
-            if (!$em instanceof KernelTestCase) {
-                throw new RuntimeException('Extend '.KernelTestCase::class);
+            $em = $this->getDoctrine()->getManager();
+            if (!$em instanceof EntityManagerInterface) {
+                throw new RuntimeException('Manager not instance of '.EntityManagerInterface::class);
             }
         }
         $em->getConnection()->getConfiguration()->setSQLLogger(new EchoSQLLogger());

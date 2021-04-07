@@ -37,6 +37,11 @@ class CreateServiceTraitTestMain
     public $dateTime;
 
     /**
+     * @var iterable
+     */
+    public $iterable;
+
+    /**
      * @var CreateServiceTraitTestCustom
      */
     public $createServiceTraitTestCustom;
@@ -50,7 +55,7 @@ class CreateServiceTraitTestMain
      */
     public $createServiceTraitTestInject;
 
-    public function __construct(string $str, int $i, float $f, $custom, bool $b, array $arr, DateTime $dateTime, CreateServiceTraitTestCustom $createServiceTraitTestCustom, CreateServiceTraitTestInterface $createServiceTraitTestInterface, CreateServiceTraitTestInject $createServiceTraitTestInject)
+    public function __construct(string $str, int $i, float $f, $custom, bool $b, array $arr, DateTime $dateTime, iterable $iterable, CreateServiceTraitTestCustom $createServiceTraitTestCustom, CreateServiceTraitTestInterface $createServiceTraitTestInterface, CreateServiceTraitTestInject $createServiceTraitTestInject)
     {
         $this->str = $str;
         $this->i = $i;
@@ -59,6 +64,7 @@ class CreateServiceTraitTestMain
         $this->b = $b;
         $this->arr = $arr;
         $this->dateTime = $dateTime;
+        $this->iterable = $iterable;
         $this->createServiceTraitTestCustom = $createServiceTraitTestCustom;
         $this->createServiceTraitTestInterface = $createServiceTraitTestInterface;
         $this->createServiceTraitTestInject = $createServiceTraitTestInject;

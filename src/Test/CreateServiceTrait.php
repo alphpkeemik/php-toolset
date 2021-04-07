@@ -42,6 +42,7 @@ trait CreateServiceTrait
                     $args[] = rand(true, false);
                     continue 2;
                 case 'array':
+                case 'iterable':
                     $args[] = [rand(), uniqid()];
                     continue 2;
                 case 'DateTime':

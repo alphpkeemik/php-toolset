@@ -36,6 +36,11 @@ class ModelTestTraitTestModel
      */
     public $dateTime;
 
+    /**
+     * @var iterable
+     */
+    public $iterable;
+
     public $unknownType;
 
     public $allowsNull;
@@ -71,6 +76,11 @@ class ModelTestTraitTestModel
     public function setDateTime(DateTime $dateTime): void
     {
         $this->dateTime = $dateTime;
+    }
+
+    public function setIterable(iterable $iterable): void
+    {
+        $this->iterable = $iterable;
     }
 
     public function setUnknownType($unknownType): void

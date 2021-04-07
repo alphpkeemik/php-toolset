@@ -21,7 +21,7 @@ class GuzzleMockTraitTest extends TestCase
         $clientFactory = $this->createClientFactoryMock($method, $uri, $options);
 
         $this->assertInstanceOf(ClientFactory::class, $clientFactory);
-        $clientFactory->getClient()->$method($uri, $options);
+        $clientFactory->getClient()->request($method, $uri, $options);
     }
 
     public function testClientWithResponse(): void
@@ -33,6 +33,6 @@ class GuzzleMockTraitTest extends TestCase
         $clientFactory = $this->createClientFactoryMock($method, $uri, $options, $response);
 
         $this->assertInstanceOf(ClientFactory::class, $clientFactory);
-        (string) $clientFactory->getClient()->$method($uri, $options)->getBody();
+        (string) $clientFactory->getClient()->request($method, $uri, $options)->getBody();
     }
 }

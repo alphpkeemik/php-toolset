@@ -24,14 +24,10 @@ trait GuzzleMockTrait
             ->method('getClient')
             ->willReturn($client);
 
-        $args = [$uri];
-        if ($options) {
-            $args[] = $options;
-        }
         $client
             ->expects($this->once())
-            ->method('__call')
-            ->with($method, $args)
+            ->method('request')
+            ->with($method, $uri, $options)
             ->willReturn($message);
 
         if ($return) {

@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  php-toolset:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: ambientia-php-toolset
+    volumes:
+      - ./:/var/www/html

@@ -4,7 +4,7 @@ namespace Ambientia\Toolset\Test;
 
 use Ambientia\Toolset\GuzzleHttp\ClientFactory;
 use GuzzleHttp\Client;
-use Psr\Http\Message\MessageInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
@@ -16,7 +16,7 @@ trait GuzzleMockTrait
     {
         $clientFactory = $this->createMock(ClientFactory::class);
         $client = $this->createMock(Client::class);
-        $message = $this->createMock(MessageInterface::class);
+        $message = $this->createMock(ResponseInterface::class);
         $stream = $this->createMock(StreamInterface::class);
 
         $clientFactory

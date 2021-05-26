@@ -5,6 +5,7 @@ Various tools used in PHP projects.
 ## Keywords
 * Doctrine testing
 * Guzzle helpers and testing
+* [Directo](https://www.directo.ee) API
 
 ## Tools
 [see docs](./docs/)

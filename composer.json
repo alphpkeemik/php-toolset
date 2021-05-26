@@ -1,7 +1,7 @@
 {
-    "name": "ambientia/symfony-toolset",
+    "name": "ambientia/php-toolset",
     "type": "library",
-    "description": "Various tools used in Symfony projects",
+    "description": "Various tools that can be used in PHP projects",
     "license": "MIT",
     "authors": [
         {

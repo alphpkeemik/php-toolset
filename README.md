@@ -1,6 +1,10 @@
-# Symfony toolset
+# PHP toolset
 
-Various tools used in Symfony projects
+Various tools used in PHP projects.
+
+## Keywords
+* Doctrine testing
+* Guzzle helpers and testing
 
 ## Tools
 [see docs](./docs/)
